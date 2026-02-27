@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Building Parking Control</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Building Parking Control</h1>
+      <section class="dashboard">
+        <article class="card">
+          <h2>Capacity</h2>
+          <p><strong id="capacity">20</strong> spaces</p>
+        </article>
+        <article class="card">
+          <h2>Occupied</h2>
+          <p><strong id="occupied">0</strong> vehicles</p>
+        </article>
+        <article class="card">
+          <h2>Available</h2>
+          <p><strong id="available">20</strong> spaces</p>
+        </article>
+        <article class="card">
+          <h2>Revenue</h2>
+          <p>$<strong id="revenue">0.00</strong></p>
+        </article>
+      </section>
+
+      <section class="controls">
+        <h2>Vehicle Entry</h2>
+        <form id="entry-form">
+          <label>
+            Plate Number
+            <input id="plate" type="text" placeholder="ABC-1234" required />
+          </label>
+          <button type="submit">Check In</button>
+        </form>
+      </section>
+
+      <section class="controls">
+        <h2>Vehicle Exit</h2>
+        <form id="exit-form">
+          <label>
+            Plate Number
+            <input id="exit-plate" type="text" placeholder="ABC-1234" required />
+          </label>
+          <button type="submit" class="secondary">Check Out</button>
+        </form>
+      </section>
+
+      <section>
+        <h2>Parked Vehicles</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Plate</th>
+              <th>Check In Time</th>
+              <th>Duration</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="parking-table-body"></tbody>
+        </table>
+      </section>
+
+      <p id="status" aria-live="polite"></p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
